@@ -1,0 +1,7 @@
+# Your own pages stay on your Mac. Nothing in pages/ is ever uploaded, so a student's name can't leave by accident.
+pages/*
+!pages/README.md
+__pycache__/
+.venv/
+*.html
+.DS_Store
