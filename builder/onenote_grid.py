@@ -22,8 +22,9 @@ from PIL import Image, ImageFont
 
 HERE = pathlib.Path(__file__).resolve().parent
 ASSETS = HERE / "grid-assets"            # icon tiles: make_grid_assets.py
-OFFICE_FONTS = [pathlib.Path(f"/Applications/Microsoft {app}.app/Contents/Resources/DFonts") for app in ("OneNote", "Word")]
-CALIBRI = next((d for d in OFFICE_FONTS if (d / "Calibri.ttf").exists()), OFFICE_FONTS[0])
+FONT_FOLDERS = [pathlib.Path(f"/Applications/Microsoft {app}.app/Contents/Resources/DFonts") for app in ("OneNote", "Word")]
+FONT_FOLDERS.append(pathlib.Path("C:/Windows/Fonts"))
+CALIBRI = next((d for d in FONT_FOLDERS if (d / "Calibri.ttf").exists()), FONT_FOLDERS[0])
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 SPINE, COL = 64, 540
@@ -910,6 +911,6 @@ if __name__ == "__main__":
     print("TITLE:", title, "| bytes:", len(page.encode()))
     if a.check or a.shot:
         if not pathlib.Path(CHROME).exists():
-            sys.exit("--check needs Google Chrome; the page itself builds without it")
+            sys.exit("--check needs Google Chrome on a Mac; the page itself builds without it")
         edges = check(page, a.shot)
         print(f"{len(edges)} blocks, right edges:", " ".join(sorted(set(edges))), "" if len(set(edges)) == 1 else "<- NOT ALIGNED")

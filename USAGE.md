@@ -22,12 +22,12 @@ To check the layout, add `--check` to `builder/onenote_grid.py` instead. It prin
 
 - **Your own rules.** Add how you write pages, your subject's terms and your exam board's wording to the "Your own rules" section of `CLAUDE.md`. Claude Code reads it every time.
 - **A page's words.** Ask Claude Code, or edit the file in `pages/` and ask it to build again.
-- **Colours of the bands and boxes.** These are at the top of `builder/onenote_grid.py`. The icons are ready-made pictures on the current colours, so a new colour needs new icons. Ask Mike for the drawing script if you get that far.
+- **Colours of the bands and boxes.** These are at the top of `builder/onenote_grid.py`. The icons are ready-made pictures on the current colours, so a new colour needs new icons, and the script that draws them isn't in this repo.
 - **Room between sections.** `SECTION_GAP` in the same place.
 
 ## Limits
 
-- **Mac only so far.** On Windows the clipboard step won't run and the paste is untested.
+- **Tested on a Mac only.** On Windows the builder saves the page as a file instead of using the clipboard. Nobody has tried pasting it there yet, and the layout may not line up.
 - **Word wrapping depends on Calibri.** The builder finds it inside OneNote or Word. Without either it guesses the letter widths, and lines may wrap differently.
 - **Boxes can't be clicked.** No pasted box in OneNote can be clicked, so pages say "type x in the box". A pen user can tick it by hand.
 - **Only the next paste changes.** Pages already in OneNote stay as they are.

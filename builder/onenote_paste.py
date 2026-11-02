@@ -40,8 +40,11 @@ if __name__ == "__main__":
     if a.out:
         pathlib.Path(a.out).write_text(page, encoding="utf-8")
     if not a.no_clip:
-        if sys.platform != "darwin":
-            sys.exit("The clipboard step only works on a Mac so far. Use --out page.html --no-clip to save the page.")
-        to_clipboard(page)
+        if sys.platform == "darwin":
+            to_clipboard(page)
+        else:   # no clipboard step outside a Mac yet: save the page, to copy from a browser
+            saved = a.out or str(pathlib.Path(a.md).with_suffix(".html"))
+            pathlib.Path(saved).write_text(page, encoding="utf-8")
+            print(f"Not a Mac, so nothing went on the clipboard. Open {saved} in a browser, select all, copy, and paste into OneNote.")
     print("TITLE:", title)
     print("bytes:", len(page.encode("utf-8")))

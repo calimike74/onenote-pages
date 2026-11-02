@@ -23,6 +23,15 @@ Build several pages one at a time. Each build replaces the clipboard, so wait fo
 
 Never tell the teacher to copy a page out of this conversation. The design only exists in what the builder puts on the clipboard.
 
+## On a Windows PC
+
+Nobody has tried this on Windows yet, so tell the teacher that first.
+
+- Use `python -m venv .venv` and `.venv\Scripts\python` in place of the commands above. Skip the Calibri check and `--check`, which look in Mac folders.
+- The builder doesn't touch the clipboard there. It saves the page as an `.html` file beside the Markdown and prints where.
+- Tell the teacher to open that file in a browser, select all, copy, and paste into a blank OneNote page.
+- Ask them to check every bar ends on the same right edge. The measurements below come from OneNote for Mac and may not hold.
+
 ## The shape of a page
 
 The first line is `# Title`. OneNote names an untitled page after its first words, and students find their work in that list, so the title must say which task it is and fit on one line. Write `# Homework 1, Week 7: what a filter does`. The builder moves `Week 7` to the right of the top band.

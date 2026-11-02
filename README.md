@@ -7,7 +7,7 @@ This is the page design Mike Lehnert uses with his classes. It works for any sub
 ## What you need
 
 - **Claude Code**, on your own account
-- **A Mac with OneNote.** The clipboard step only works on a Mac so far, and the design was measured on OneNote for Mac. It has not been tried on Windows.
+- **A Mac with OneNote.** The clipboard step only works on a Mac so far, and the design was measured on OneNote for Mac. See "On a Windows PC" below.
 
 You don't need an MCP server, a plugin or a skill. Claude Code never connects to OneNote. It puts the page on your clipboard and you paste it.
 
@@ -19,7 +19,7 @@ Open Claude Code and paste this one sentence:
 Clone https://github.com/calimike74/onenote-pages into my home folder, set it up by following its CLAUDE.md, and put the sample homework on my clipboard.
 ```
 
-Claude Code may ask you to sign in to GitHub first, because this repo is private. Then make a new page in OneNote, one you don't mind deleting, and press Cmd+V.
+Then make a new page in OneNote, one you don't mind deleting, and press Cmd+V.
 
 ## Using it
 
@@ -32,3 +32,11 @@ When Claude says it's on your clipboard, click on a blank OneNote page and press
 Always let Claude Code do the build. Copying a page's text out of the chat gets you plain words with no design.
 
 `USAGE.md` has the rest: what you can change, and what it can't do.
+
+## On a Windows PC
+
+Nobody has tried this on Windows yet. Claude Code can't put the page on your clipboard there, so the builder saves it as a file instead. Open that file in a browser, select all, copy, and paste into OneNote. The icons and colours may well survive, but the bars may not line up, because the layout was measured on OneNote for Mac.
+
+## Licence
+
+MIT: free to use and change, with no guarantees. See `LICENSE`.
